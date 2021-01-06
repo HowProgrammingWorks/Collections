@@ -26,7 +26,7 @@ for (const key in hash1) {
 console.dir({ keys: Object.keys(hash1) });
 console.dir({ hash1 });
 
-const save = collection => fs.writeFile(
+const save = (collection) => fs.writeFile(
   collection[SYMBOL_FILENAME], v8.serialize(collection), () => {}
 );
 
