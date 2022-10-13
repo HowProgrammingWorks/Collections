@@ -1,7 +1,7 @@
 'use strict';
 
-const fs = require('fs');
-const v8 = require('v8');
+const fs = require('node:fs');
+const v8 = require('node:v8');
 
 const SYMBOL_FILENAME = Symbol('fileName');
 
