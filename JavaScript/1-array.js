@@ -9,10 +9,10 @@ console.dir({ even });
 console.dir({
   length: even.length,
   first: even[0],
-  last: even[even.length - 1]
+  last: even[even.length - 1],
 });
 
 console.dir({
   'even.slice(1, 4)': even.slice(1, 4),
-  'even.splice(2, 4, 3, 7, 9)': even.splice(2, 4, 3, 7, 9)
+  'even.splice(2, 4, 3, 7, 9)': even.splice(2, 4, 3, 7, 9),
 });

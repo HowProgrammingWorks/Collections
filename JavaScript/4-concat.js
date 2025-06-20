@@ -7,7 +7,7 @@ const SYMBOL_FILENAME = Symbol('fileName');
 
 const hash1 = {
   key: 'value',
-  [SYMBOL_FILENAME]: './file0.v8'
+  [SYMBOL_FILENAME]: './file0.v8',
 };
 
 hash1.key2 = 'value2';
@@ -27,7 +27,7 @@ console.dir({ keys: Object.keys(hash1) });
 console.dir({ hash1 });
 
 const save = (collection) => fs.writeFile(
-  collection[SYMBOL_FILENAME], v8.serialize(collection), () => {}
+  collection[SYMBOL_FILENAME], v8.serialize(collection), () => {},
 );
 
 save(hash1);
