@@ -11,12 +11,12 @@ const hash1 = {
 };
 
 hash1.key2 = 'value2';
-hash1['key' + 3] = 'value3';
+hash1[`key${3}`] = 'value3';
 hash1[SYMBOL_FILENAME] = './file1.v8';
 hash1[SYMBOL_FILENAME] = './file2.v8';
 hash1[Symbol('fileName')] = './file3.v8';
 
-console.log('FileName: ' + hash1[SYMBOL_FILENAME]);
+console.log(`FileName: ${hash1[SYMBOL_FILENAME]}`);
 
 for (const key in hash1) {
   const value = hash1[key];
@@ -26,8 +26,10 @@ for (const key in hash1) {
 console.dir({ keys: Object.keys(hash1) });
 console.dir({ hash1 });
 
-const save = (collection) => fs.writeFile(
-  collection[SYMBOL_FILENAME], v8.serialize(collection), () => {},
-);
+const save = (collection) => {
+  const fileName = collection[SYMBOL_FILENAME];
+  const data = v8.serialize(collection);
+  fs.writeFile(fileName, data, () => {});
+};
 
 save(hash1);
